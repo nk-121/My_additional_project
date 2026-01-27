@@ -1,3 +1,31 @@
+# Rain Prediction Project (Scaffold)
+
+Starter scaffold for Rain Prediction using FastAPI (backend) and React + Vite (frontend).
+
+Structure:
+- `backend/` — FastAPI app with modular layout and placeholders for ML models.
+- `frontend/` — Vite + React app using Redux Toolkit; single-page UI with placeholders for model visualization.
+
+Quick start (Windows):
+
+1. Backend
+
+```
+cd backend
+python -m venv .venv
+.\.venv\Scripts\pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8000
+```
+
+2. Frontend
+
+```
+cd frontend
+npm install
+npm run dev
+```
+
+The frontend expects the backend at `http://localhost:8000`.
 # 🌧 Rainfall & Weather Analysis Project
 
 ## 📌 Project Motivation
@@ -101,7 +129,6 @@ The study area is influenced by the North-East (NE) Monsoon during October–Dec
 ---
 
 ## 🔗 API Endpoints Used
-- **Daily Historical Weather Data**: [Open-Meteo API](https://archive-api.open-meteo.com/v1/archive)
 
 ### Example Parameters:
 ```plaintext
@@ -110,6 +137,16 @@ longitude=80.027227
 daily=precipitation_sum,temperature_2m_mean,relative_humidity_2m_mean,...
 timezone=Asia/Kolkata
 ```
+
+Server-side model storage
+-------------------------
+The backend provides a simple file-based model storage for development. New model files can be registered via a multipart form upload to:
+
+- `POST /api/models/register` — fields: `file` (model file), `name` (string), optional `algorithm`, `version`.
+- `GET /api/models/registry` — list stored model metadata.
+- `GET /api/models/download/{model_name}` — download the saved model file.
+
+Uploaded models are kept under `backend_data/models/` and a `registry.json` keeps metadata. This is a placeholder for later integration with model versioning or cloud storage.
 
 ---
 

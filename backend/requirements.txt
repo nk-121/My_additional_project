@@ -1,0 +1,28 @@
+# FastAPI
+# Uvicorn
+# typing
+
+
+# requirements.txt
+fastapi==0.115.0
+uvicorn[standard]==0.30.0
+pydantic[email]==2.9.2
+pydantic-settings==2.5.2
+python-jose[cryptography]==3.3.0
+python-multipart==0.0.12
+slowapi==0.1.9
+python-dotenv==1.0.1
+bcrypt==4.2.1
+PyJWT==2.9.0
+motor==3.3.2
+
+# Optional but recommended
+#redis==5.0.1  # For distributed rate limiting
+#sentry-sdk[fastapi]==1.39.2  # Error tracking
+#prometheus-fastapi-instrumentator==6.1.0  # Metrics
+#httpx==0.26.0  # For async HTTP requests
+
+# Database (choose one)
+# sqlalchemy==2.0.25
+# asyncpg==0.29.0  # For PostgreSQL
+   # For MongoDB
